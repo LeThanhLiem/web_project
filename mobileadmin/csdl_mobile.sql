@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th9 26, 2018 lúc 09:38 AM
+-- Thời gian đã tạo: Th10 09, 2018 lúc 08:10 AM
 -- Phiên bản máy phục vụ: 5.7.21
 -- Phiên bản PHP: 5.6.35
 
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `manu_ID` int(11) NOT NULL,
   `type_ID` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=221 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `products`
@@ -74,26 +74,25 @@ INSERT INTO `products` (`ID`, `name`, `price`, `image`, `des`, `manu_ID`, `type_
 (2, 'Doll', 963, 'DollXQ.jpg', 'Búp bê cho các em nhỏ.', 1, 2),
 (3, 'Mô hình xe đua Bạch Tuộc', 800, 'XeduaBT.jpg', 'Mô hình xe đua.', 1, 3),
 (4, 'Xe đồ chơi', 777, 'Xedochoi.jpg', 'Xe đồ chơi cho các em.', 1, 4),
-(5, 'Đồ chơi nhà bếp.', 997, 'Dochoinhabep.jpg', 'Đầy đủ đồ dùng trong bộ đồ chơi nhà bếp', 1, 5),
-(6, 'Lego người sắt', 845, 'Lego người sắt', 'Lego người sắt', 2, 1),
+(5, 'Đồ chơi nhà bếp.', 997, 'bep111.jpg', 'Đầy đủ đồ dùng trong bộ đồ chơi nhà bếp', 1, 5),
+(6, 'Lego người sắt', 845, 'LegoNS.jpg', 'Lego người sắt', 2, 1),
 (7, 'Búp bê barbie', 843, 'Bupbexxxxxx.jpg', 'Búp bê xinh ', 2, 2),
 (8, 'MÔ hình láp ráp đồ chơi', 600, 'Mohinhlr.jpg', 'Mô hình láp ráp ', 2, 3),
 (9, 'Xe điều khiển từ xa', 845, 'Xedieuk.jpg', 'Xe điều khiển từ xa.', 2, 4),
-(10, 'Bộ đồ chơi nhà bếp ahihj', 311, 'Dochoinhabep.jpg', 'Bộ đồ chơi nhà bếp ahiihihihihihi', 2, 5),
+(10, 'Bộ đồ chơi nhà bếp hello kitty', 311, 'Dochoinhabep.jpg', 'Bộ đồ chơi nhà bếp ahiihihihihihi', 2, 5),
 (11, 'Lego người nhện', 843, 'Legonguoinhen.jpg', 'Lego người nhện', 3, 1),
 (12, 'Bup bê nam', 555, 'Bupbenam.jpg', 'Búp bê nam ', 3, 2),
 (13, 'Mô hình máy bay ', 877, 'Mohinhmaybay.jpg', 'Mô hình máy bay ', 3, 3),
 (14, 'Xe dua f1', 857, 'Xeduaf1.jpg', 'xe dua f1 100m', 3, 4),
-(15, 'Xe Yaz', 10000, 'Yaz.jpg', 'xe thế hệ mới', 3, 4),
-(16, 'xe Raider', 10000, 'RAider.ipg', 'best xe rider', 3, 4),
-(17, 'Lego micecraft', 999, 'lego434.jpg', 'best đập đá', 3, 1),
-(18, 'Lego doraemon', 1111, 'doremon.jpg', 'doremon cute', 4, 1),
-(19, 'Dồ CHơi Bếp dao', 1111, 'dao.jpg', 'dao cực sắt', 5, 5),
-(20, 'đồ chơi xe lắc', 9999, 'nhun.jpg', 'lắc cực mạnh', 4, 4),
-(21, 'Lego micecraft', 999, 'lego434.jpg', 'best đập đá', 3, 1),
-(22, 'Lego doraemon', 1111, 'doremon.jpg', 'doremon cute', 4, 1),
-(23, 'Dồ CHơi Bếp dao', 1111, 'dao.jpg', 'dao cực sắt', 5, 5),
-(24, 'đồ chơi xe lắc', 9999, 'nhun.jpg', 'lắc cực mạnh', 4, 4);
+(15, 'Bộ đồ nhà bếp cho sanj', 10000, 'daosan.jpg', 'Dao của vua đầu bếp.', 3, 5),
+(16, 'Lego micecraft', 999, 'lego434.jpg', 'best đập đá', 4, 1),
+(17, 'Búp bê công chúa', 1111, 'dollred.jpg', 'Công chúa có chiếc đầm màu đỏ lè đỏ lét.', 4, 2),
+(20, 'Dồ CHơi Bếp dao', 1111, 'dao.jpg', 'dao cực sắt', 4, 5),
+(19, 'đồ chơi xe lắc', 9999, 'nhun.jpg', 'lắc cực mạnh', 4, 4),
+(21, 'Lego khủng long', 1221, 'legokunglong.jpg', 'Khủng long mọc tận 3 cái sừng.', 5, 1),
+(22, 'Bupbeahihi.jpg', 988, 'bupbecocanh.jpg', 'Búp bê có cánh.', 5, 2),
+(23, 'Dụng cụ nhà bếp', 1111, 'dungcunhabep.jpg', 'Bộ đồ dùng nhà bếp cho các bé nè', 5, 5),
+(18, 'Mô hình xe tăng', 9721, 'xetang9.jpg', 'Xe tăng bắng từ lưa hột dưa.', 4, 3);
 
 -- --------------------------------------------------------
 
