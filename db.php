@@ -35,6 +35,5 @@ class Db{
 		return $this->getData($result);
 	}
 	
-	
 
   }

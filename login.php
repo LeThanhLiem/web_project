@@ -154,6 +154,31 @@ a{color:inherit;text-decoration:none}
 .foot-lnk{
 	text-align:center;
 }
+<?php
+	include("config.php");
+	session_start();
+	if ($_SERVER["REQUEST_METHOD"] == "POST"){
+		$myusername = mysqli_real_escape_string($db, $_POST['ID']);
+		$mypassword = mysqli_real_escape_string($db, $_POST['Password']);
+
+		$sql = "SELECT ID FROM admin WHERE ID = '$myusername' and Password = '$mypassword'";
+		$result = mysqli_query($db, $sql);
+		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$active = $row['active'];
+
+		$count mysqli_num_rows($result);
+
+		if ($count == 2){
+			session_register("myusername");
+			$_SESSION['login_user'] = $myusername;
+			header("location: index.php");
+		}
+		else{
+			$error = "login failed";
+		}
+	}
+?>
+
 </style>
 <body>
 <div class="login-wrap">

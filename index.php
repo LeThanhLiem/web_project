@@ -29,13 +29,12 @@
 	</style>
 	<?php
 	include "config.php";
+	include "login.php";
 	require "db.php";
 	$db=new Db;
 	
 	$product1 = $db->product1();
-	
 
-	
 	?>
 	
 </head>
