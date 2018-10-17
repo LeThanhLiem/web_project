@@ -13,54 +13,9 @@
 	<link rel="stylesheet" href="public/css/matrix-media.css" />
 	<link href="public/font-awesome/css/font-awesome.css" rel="stylesheet" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-	<style type="text/css">
-		ul.pagination{
-			list-style: none;
-			float: right;
-		}
-		ul.pagination li.active{
-			font-weight: bold
-		}
-		ul.pagination li{
-		  float: left;
-		  display: inline-block;
-		  padding: 10px
-		}
-		.logoTeam{
-			height: 98px;
-			position: fixed;
-			left: 0;
-			top: 0;
-		}
-	</style>
-	<?php
-	include "config.php";
-	require "db.php";
-	$db=new Db;
-	
-		if (isset($_GET['page']))
-	{
-		$page = $_GET['page'];
-	}
-	else
-	{
-		$page = 1;
-	}
-	$per_page = 4;
-	$db1 = new Db();
-	$total = count($db1->product1());
-	$product1 = $db->getAllProducts($page,$per_page);
-	$url  = $_SERVER['PHP_SELF'];
-	//hien thi thanh phan trang
-	echo $db->paginate($url, $total, $page, $per_page);
-	$link = $db->paginate($url, $total, $page, $per_page);
-
-
-	?>
-	
 </head>
 <body>
-<img class="logoTeam" src="public/images/LogoTeam.png">
+
 <!--Header-part-->
 <div id="header">
 	<h1><a href="dashboard.html">Dashboard</a></h1>
@@ -97,8 +52,8 @@
 
 <!--start-top-serch-->
 <div id="search">
-	<form action="result.PHP" method="get">
-	<input type="text" placeholder="Search here..." name="key" />
+	<form action="result.php" method="get">
+	<input type="text" placeholder="Search here..." name="key"/>
 	<button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
 </form>
 </div>
@@ -117,62 +72,57 @@
 
 	</ul>
 </div>
+
 <!-- BEGIN CONTENT -->
 <div id="content">
 	<div id="content-header">
-		<div id="breadcrumb"> <a href="index.php" title="Go to Home" class="tip-bottom current"><i class="icon-home"></i> Home</a></div>
-		<h1>Manage Products</h1>
+		<div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom current"><i class="icon-home"></i> Home</a></div>
+		<h1>Add New Product</h1>
 	</div>
 	<div class="container-fluid">
 		<hr>
 		<div class="row-fluid">
 			<div class="span12">
 				<div class="widget-box">
-					<div class="widget-title"> <span class="icon"><a href="form.php"> <i class="icon-plus"></i> </a></span>
-						<h5>Products</h5>
+					<div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+						<h5>Product Detail</h5>
 					</div>
 					<div class="widget-content nopadding">
-						<table class="table table-bordered table-striped">
-							<thead>
-							<tr>
-								<th></th>
-								<th>Name</th>
-								<th>Category</th>
-								<th>Producer</th>
-								<th>Description</th>
-								<th>Price ($)</th>
-								<th>Action</th>
-							</tr>
-							</thead>
-							<tbody>
-								<?php  foreach($product1 as $value){ ?>
-							<tr class="">
-								<td style="width: 25%"><img src='public/images/<?php echo $value['image'] ?>'></td>
-								 
-								<td><?php echo $value['name']?></td>
-								<td><?php echo $value['type_name']?></td>
-								<td><?php echo $value['manu_name']?></td>
-								<td><?php echo $value['des']?></td>
-								<td><?php echo $value['price']?></td>
 
-								<td>
-									<a href="edit.php?ID=<?php echo $value['ID']?>" class="btn btn-success btn-mini" >Edit</a>
-									<a href="delete.php?ID=<?php echo $value['ID']?>" class="btn btn-danger btn-mini">Delete</a>
-								</td>
-							</tr>
-							<?php } ?>
-						</tbody>
-						</table>
-						<ul class="pagination" name = "page">
-							<?php echo $db->paginate($url, $total, $page, $per_page); ?>
-						</ul>
-						
+						<!-- BEGIN USER FORM -->
+						<form action="#" method="post" class="form-horizontal" enctype="multipart/form-data">
+							<div class="control-group">
+								<label class="control-label">Manufacture Name :</label>
+								<div class="controls">
+									<input type="text" class="span11" placeholder="Manufacture name" name="manu_name" /> *
+								</div>
+							</div>
+
+	
+							<div class="control-group">
+									<label class="control-label">Choose an image :</label>
+									<div class="controls">
+										<input type="file" name="fileUpload" id="fileUpload">
+									</div>
+								</div>
+	
+
+								<div class="form-actions">
+									<button type="submit" class="btn btn-success">Add</button>
+								</div>
+							</div>
+
+						</form>
+						<!-- END USER FORM -->
+
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <!-- END CONTENT -->
 <!--Footer-part-->
 <div class="row-fluid">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th10 09, 2018 lúc 08:10 AM
+-- Thời gian đã tạo: Th10 16, 2018 lúc 07:56 AM
 -- Phiên bản máy phục vụ: 5.7.21
 -- Phiên bản PHP: 5.6.35
 
@@ -118,6 +118,26 @@ INSERT INTO `protypes` (`type_ID`, `type_name`, `type_img`) VALUES
 (3, 'Mô hình', 'mohinh.jpg'),
 (4, 'Xe đồ chơi', 'cartoy.jpg'),
 (5, 'Đồ chơi nhà bếp', 'nhabep.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `User` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`User`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`User`, `Password`) VALUES
+('admin', '123456');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
